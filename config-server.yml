@@ -1,0 +1,25 @@
+spring:
+  profiles:
+    active: dev
+---
+server:
+  port: 8201
+spring:
+  profiles: dev
+  application:
+    name: springcloud-provider-dept
+eureka:
+  client:
+    service-url:
+      defaultZone: http://peer1:7001/eureka/,http://peer2:7002/eureka/,http://peer3:7003/eureka/
+---
+server:
+  port: 8201
+spring:
+  profiles: test
+  application:
+    name: springcloud-provider-dept
+eureka:
+  client:
+    service-url:
+      defaultZone: http://peer1:7001/eureka/,http://peer2:7002/eureka/,http://peer3:7003/eureka/
